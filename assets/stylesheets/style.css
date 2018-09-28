@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(21, 18, 18);
   font-size: 1em;
@@ -60,6 +64,12 @@ body {
   outline: 0 !important;
 
   font-size: 1em;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(155, 155, 155);
 }
 
 .button:focus {
