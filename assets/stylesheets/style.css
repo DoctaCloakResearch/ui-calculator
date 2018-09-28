@@ -70,6 +70,7 @@ body {
 
 .button:hover {
   background-color: rgb(155, 155, 155);
+  color: rgb(255, 255, 255);
 }
 
 .button:focus {
@@ -87,6 +88,8 @@ body {
   outline: 0 !important;
 
   box-shadow:none !important;
+
+  color: rgb(255, 255, 255);
 }
 
 .flex-two {
