@@ -1,5 +1,6 @@
 const title = document.querySelector('#score');
-titleText = "";
+title.innerHTML = "0"
+buffer = "";
 
 let a = "";
 let b = "";
@@ -10,8 +11,8 @@ let type = null;
 const buttonGroup = document.querySelectorAll('.button').forEach(function(button) {
   button.addEventListener("click", function(ele) {
     if (!isNaN(button.innerHTML)) {
-      titleText += button.innerHTML;
-      title.innerHTML = titleText
+      buffer += button.innerHTML;
+      title.innerHTML = buffer
 
       if (count == 2) {
         b = button.innerHTML;
@@ -26,31 +27,31 @@ const addButton = document.querySelector("#add").addEventListener("click", funct
   title.innerHTML = "0";
   type = "add";
   if (count == 1) { 
-    console.log("a");
-    a = titleText;
+    ("a");
+    a = buffer;
     count++;
   } else if (count == 2) {
-    console.log("b");
-    b = titleText
+    ("b");
+    b = buffer
     count = 0;
   }
-  titleText = "";
+  buffer = "";
 });
 
 const subtractButton = document.querySelector("#subtract").addEventListener("click", function(ele) {
   ++count;
   title.innerHTML = "0";
-  type = "subract";
+  type = "subtract";
   if (count == 1) { 
-    console.log("a");
-    a = titleText;
+    ("a");
+    a = buffer;
     count++;
   } else if (count == 2) {
-    console.log("b");
-    b = titleText
+    ("b");
+    b = buffer
     count = 0;
   }
-  titleText = "";
+  buffer = "";
 });
 
 const multiplyButton = document.querySelector("#multiply").addEventListener("click", function(ele) {
@@ -58,15 +59,15 @@ const multiplyButton = document.querySelector("#multiply").addEventListener("cli
   title.innerHTML = "0";
   type = "multiply";
   if (count == 1) { 
-    console.log("a");
-    a = titleText;
+    ("a");
+    a = buffer;
     count++;
   } else if (count == 2) {
-    console.log("b");
-    b = titleText
+    ("b");
+    b = buffer
     count = 0;
   }
-  titleText = "";
+  buffer = "";
 });
 
 const divideButton = document.querySelector("#divide").addEventListener("click", function(ele) {
@@ -74,37 +75,37 @@ const divideButton = document.querySelector("#divide").addEventListener("click",
   title.innerHTML = "0";
   type = "divide";
   if (count == 1) { 
-    console.log("a");
-    a = titleText;
+    ("a");
+    a = buffer;
     count++;
   } else if (count == 2) {
-    console.log("b");
-    b = titleText
+    ("b");
+    b = buffer
     count = 0;
   }
-  titleText = "";
+  buffer = "";
 });
 
 const equalsButton = document.querySelector("#equal").addEventListener("click", function(ele) {
   count = 0;
   if (type === "add") {
     title.innerHTML = "" + add(a, b)
-    titleText = "";
+    buffer = "";
     type = null;
   }
   else if (type === "subtract") {
     title.innerHTML = "" + subtract(a, b)
-    titleText = "";
+    buffer = "";
     type = null
   }
   else if (type === "multiply") {
     title.innerHTML = "" + multiply(a, b)
-    titleText = "";
+    buffer = "";
     type = null
   }
   else if (type === "divide") {
     title.innerHTML = "" + divide(a, b)
-    titleText = "";
+    buffer = "";
     
     type = null;
   } else {
@@ -113,7 +114,7 @@ const equalsButton = document.querySelector("#equal").addEventListener("click", 
 });
 
 const clearButton = document.querySelector('#clear').addEventListener("click", function() {
-  titleText = "";
+  buffer = "";
   title.innerHTML = "0";
   a = null;
   b = null;
